@@ -1,0 +1,11 @@
+qq-wechat-cli
+
+The original QQ integration and newly written project code are published as
+UNLICENSED, matching the QQ migration baseline. All rights are reserved for
+those portions; public availability does not grant a general open-source
+redistribution license.
+
+Portions adapted from WeChat CLI / WeChat CLI Local remain available under the
+Apache License, Version 2.0. See LICENSE-APACHE-2.0 and NOTICE for attribution.
+Third-party Rust dependencies retain their respective licenses. This notice
+does not override those licenses.

@@ -1,0 +1,22 @@
+import { DatabaseSync } from 'node:sqlite';
+import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { performance } from 'node:perf_hooks';
+import { fileURLToPath } from 'node:url';
+const root=fileURLToPath(new URL('../',import.meta.url));const dir=join(root,'.cache/synthetic-benchmark');mkdirSync(dir,{recursive:true});
+const path=join(dir,'Msg3.0.db');
+const fixture=JSON.parse(readFileSync(join(root,'test/fixtures/qq.json'),'utf8'));writeFileSync(path,Buffer.from(fixture.plain,'hex'));
+const db=new DatabaseSync(path);db.exec('DELETE FROM group_123456; BEGIN');
+const insert=db.prepare('INSERT INTO group_123456 VALUES(?,?,?,?,?)');
+const tlv=(tag,body)=>{const header=Buffer.alloc(3);header[0]=tag;header.writeUInt16LE(body.length,1);return Buffer.concat([header,body]);};
+const count=120000;for(let i=0;i<count;i++){
+  const time=1700000000+i;const header=Buffer.alloc(28);header.writeUInt32LE(time,8);header.writeUInt32LE(i,12);
+  const text=`合成大库检索 为什么 第 ${i} 条消息 ${'固定内容 abcdef '.repeat(10)}`;
+  insert.run(time,i,10000+i%100,Buffer.concat([header,tlv(1,tlv(1,Buffer.from(text,'utf16le')))]),null);
+}db.exec('COMMIT');db.close();
+const started=performance.now();const p=spawnSync(process.execPath,[join(root,'dist/cli.js'),'qq','init','--db',path,'--account','synthetic','--data-dir',join(dir,'state')],{windowsHide:true,encoding:'utf8',timeout:180000});
+if(p.status!==0)throw new Error(p.stderr);
+const result=JSON.parse(p.stdout);console.log(JSON.stringify({syntheticMessages:count,wallMs:Math.round(performance.now()-started),timing:result.data.timing}));
+const bench=spawnSync(process.execPath,[join(root,'research/benchmark.mjs'),'qq',join(dir,'state'),join(root,'.local/synthetic-benchmark.json')],{encoding:'utf8',windowsHide:true,timeout:180000});
+if(bench.status!==0)throw new Error(bench.stderr);process.stdout.write(bench.stdout);

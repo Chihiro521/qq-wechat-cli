@@ -1,0 +1,76 @@
+{
+  "capturedAt": "2026-10-29T15:39:35.085Z",
+  "scope": "current working trees, including uncommitted source and tests",
+  "projects": {
+    "qq": {
+      "commit": "03f6d0618c2fcbf8e0bb505046d1ba9e8c12d669",
+      "changedSourceFiles": [
+        "src/cli.js",
+        "src/decrypt.js",
+        "src/pcqq_decrypt.py",
+        "src/storage.js",
+        "test/cli.test.js",
+        "test/pcqq-decrypt.test.js"
+      ],
+      "sourceHashes": {
+        "package-lock.json": "90d21503203af2930e95756175fb3accf809c6fd46d67bc46e988d155121f5fe",
+        "package.json": "3dff11c93b1ffa8611379746a07d329b0b8d77f48a2d266c2efe7db524a79abd",
+        "src/cli.js": "e88b75812797439b55967f1534e183ccdb4678cd493c4d84eda103a3d4a58577",
+        "src/config.js": "b22004ab718f55c0e7399197e95406afdda9a3b11b305efb324858a3935fe70c",
+        "src/database.js": "b941e179aefb8c59cd493e2a6c43a76d5d8558c59eab5d08ffdef25d9c6e5ff3",
+        "src/decode.js": "7b24dfb73d7cbf0ea77368d326b75cc3dd9cde80f5d00cb843fcf79fa0012a8a",
+        "src/decrypt.js": "1ccb3b329cbcf6bedfdf324f358617e5f8a80fe4422c4fad5a5f769bc5384931",
+        "src/errors.js": "4d572bf9cf229a984304267b1f5ca2a7375cef74476a240ed8492317e3b23b12",
+        "src/exporter.js": "2ab02d07b8397ec83bd9fab40e2aa0f30c8dd59f87b21565825501ac243c5ae5",
+        "src/favorites.js": "67d1ad78020df5b0d917b9e451f97a5e7f0efa224499ac3840986bb709e254a4",
+        "src/pcqq_decrypt.py": "128aa3dee8ce1b230a7e22501d4ae46f8f3d6be68c52cb8bd5e7a4ea7bcfa9b4",
+        "src/state.js": "89a9939401e05e1172e5b951bb681bf7b2761464284fff7da77988515f0cc489",
+        "src/storage.js": "ae23ee02319b03bd1dafa43cced1c78e6ddc713542ad84a7f83849dda157d532",
+        "src/time.js": "233e2579285cd02816474ff1608132040d05da8ae51b2535a4a1ff60266f3cb2",
+        "test/cli.test.js": "6b51e5ef364f17036eae87528acd32ffbd114b1c35b4abd36a94d4f5ab61a022",
+        "test/database.test.js": "b0d56b70b3f2ae33f42537be74f8298d3f29108f02de8a96df5567e21db2e820",
+        "test/decode.test.js": "f234439b9c30ddc06570820fe223f6534174b3da9d39f5545ba096961d1e165c",
+        "test/decrypt.test.js": "5b7e27d6d7fdb8b24a1240a18dc7052bb9cce39334190d7e321cc55dec662838",
+        "test/favorites.test.js": "4e9f59003a3b0c785bace4ef036c24ca9f87051477369562acac0e0c510734a3",
+        "test/helpers.js": "f10b56f29f4b1f40319fc54820b8b496b07765985b82e67fbf70f695a529e56a",
+        "test/pcqq-decrypt.test.js": "cdee6f7e9da95782b2c9a505bbd0d2ac91d3468a920c9667c9bc6de8e6869b8f",
+        "test/state.test.js": "864913eddb4b4f671c6cf27b475bea3d7a40ef83d63b39a2f5cfaad6580ed1d8",
+        "test/storage.test.js": "2e8afa705fab8371800598d70ec88416e5d6ffe1cc142dcf164ea5d2c1976914",
+        "test/time.test.js": "ba4e02a48d860682b7aecb69b553119868af893822e61c19677155d47cb10757"
+      }
+    },
+    "wechat": {
+      "commit": "5ba6bb7adb18045ada6066a9b80f483412d1c742",
+      "changedSourceFiles": [],
+      "sourceHashes": {
+        "pyproject.toml": "2e93c0aee62331d8090cd626507414fe4da76cfa4c0af8e59c7da02c621341ea",
+        "wechat_cli/__init__.py": "d195db8b0981342a01826eb98b39a6c95159dd2147ce0fd36835dc394e589667",
+        "wechat_cli/commands/contacts.py": "9ba6f9268eab6c4354f957e2b70ae9c1bba46d19afdfed32a718fd5ad9d716d0",
+        "wechat_cli/commands/export.py": "cda08a2b3661195eea5cc99dceaa7050bf0acf0d7575499716d75f2f1fc805e0",
+        "wechat_cli/commands/favorites.py": "b479ce5e21b42cc141d5523b988a2934403e809e1538c92c7cee04cf661b7930",
+        "wechat_cli/commands/history.py": "a3ef67e863ec50855361747c2ac98a14559e06b3509e63ae2a6be5993372dab9",
+        "wechat_cli/commands/init.py": "bdaf9729812a6323233a58ee5c9639ba8102aac4ed4a36d4b8196f364acdf15e",
+        "wechat_cli/commands/members.py": "0c3d66254db62f3c8e444a3c0b12fa04d199479fb6b7e7bc481cb9fc2bbcd855",
+        "wechat_cli/commands/new_messages.py": "9009bcd1abc7427208e93e540656586fd3d7ae7f883ae93416c5a4f36ea44a08",
+        "wechat_cli/commands/search.py": "10dcc9984e801e6ec41b7c64e158a4b2d9b059cb95fbf4d4ecee9871c043efa8",
+        "wechat_cli/commands/sessions.py": "233f20c6d0eba4ceef501f514aa6447e17edac1772cb28059119c6d5ee6e3f6c",
+        "wechat_cli/commands/stats.py": "e774ad86b9de7408c6e182712815a69747e034722e04b22a9ed79926d45e82ed",
+        "wechat_cli/commands/unread.py": "fa1e40fca6535ef85c042375c392c5877c9e972f8caa839610be94798123ac01",
+        "wechat_cli/core/config.py": "9fc708329f8897d526e78f78d4e330544a7aacb56a86e11a1cb210806d786fcd",
+        "wechat_cli/core/contacts.py": "c233555e0028b06096fa4a9e045e0033d8bf623792436bcb911621a58abb6e40",
+        "wechat_cli/core/context.py": "2a34322a02c9a2994c91d30bedf440e238dadd6ce3091e796ec7b78240e2c527",
+        "wechat_cli/core/crypto.py": "9f6167bc97b6ff38d5ba199b0f64f18b78c33ebe9d7a49fea9dd36387dd90f6c",
+        "wechat_cli/core/db_cache.py": "2b64be60f4bef9846a464c7ef364b764162a091c00e1b3c14e348b16f0781abf",
+        "wechat_cli/core/key_utils.py": "b9cabd37a5c18f769ad27a4e93f2d13210fea02f8c79c85c8663d25072fdbe0d",
+        "wechat_cli/core/messages.py": "50f23dfa4f4742cec99a1428df7324e3dd4bafff5134181296334eed12ff6bc9",
+        "wechat_cli/keys/__init__.py": "c68d41ff92d723128cc38ce34e79d0891b4f92b04e5374aa1b411d9c721f6424",
+        "wechat_cli/keys/common.py": "e9495d8734c48318717fa1c35d9d53c71c6922de5ea1123732a87adb1851392d",
+        "wechat_cli/keys/scanner_linux.py": "35f3f03e5fb7d3c2e7439140f8adeab016a97ed01388ebc90f5af22405713e00",
+        "wechat_cli/keys/scanner_macos.py": "b8741e0c00705e9c3c9bacb74095ea456cc4e745ae11e948b119322594b814cd",
+        "wechat_cli/keys/scanner_windows.py": "95c79fa74f9e2950d4d4902b674d1155d421da904a7ac42fc525d76148e2649e",
+        "wechat_cli/main.py": "e6da82ab8e29d92fbb5ed74d8fcdb8ebdd1ef9668457232dbfca54a349348528",
+        "wechat_cli/output/formatter.py": "c2ececb2e6fb4206cfa820a0464a8de964c8031c4266a4e6deef08921fcd1d2c"
+      }
+    }
+  }
+}

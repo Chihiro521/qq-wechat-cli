@@ -1,0 +1,19 @@
+name: Windows validation
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: dtolnay/rust-toolchain@stable
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:rust
+      - run: npm test
+      - run: New-Item -ItemType Directory -Force artifacts
+      - run: npm pack --pack-destination artifacts
+      - run: node scripts/smoke-package.mjs artifacts/qq-wechat-cli-0.1.0.tgz

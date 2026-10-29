@@ -1,0 +1,33 @@
+qq-wechat-cli 0.1.0
+
+Local migration baselines:
+  qq-cli-local 0.3.2, including the current working-tree fixes
+  https://github.com/Chihiro521/qq-cli-local
+  wechat-cli-local 0.3.1
+  https://github.com/Chihiro521/wechat-cli-local
+
+The WeChat adapter is a modified Rust port of portions of WeChat CLI Local and
+its upstream WeChat CLI parsing/decryption logic. The CLI, process protocol,
+page/WAL refresh, persistent index, Windows snapshot mapping and independent
+QQ codec were rewritten for this combined project.
+
+Upstream attribution retained from WeChat CLI Local:
+
+WeChat CLI Local
+
+This distribution contains modified code from WeChat CLI:
+https://github.com/huohuoer/wechat-cli
+(previously referenced as freestylefly/wechat-cli)
+
+WeChat CLI credits wechat-decrypt for its database decryption and parsing:
+https://github.com/ylytdeng/wechat-decrypt
+
+Local changes include Windows data directory detection, packaging,
+publication automation, and exclusion of local account/export data.
+Distributed under the Apache License, Version 2.0; see LICENSE-APACHE-2.0.
+
+The Windows core statically includes SQLite (public domain), zstd
+(BSD-3-Clause OR GPL-2.0; the BSD alternative applies), RustCrypto libraries
+(MIT OR Apache-2.0), rusqlite (MIT), and their dependencies. Their source
+versions are pinned in native/Cargo.lock. No QQ client DLL or Python runtime
+is included in this package.

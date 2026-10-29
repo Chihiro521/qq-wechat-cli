@@ -1,0 +1,28 @@
+{
+  "name": "qq-wechat-cli",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "description": "Unified local QQ and WeChat history CLI with a Rust engine",
+  "author": "Chihiro521",
+  "repository": { "type": "git", "url": "git+https://github.com/Chihiro521/qq-wechat-cli.git" },
+  "homepage": "https://github.com/Chihiro521/qq-wechat-cli#readme",
+  "bugs": { "url": "https://github.com/Chihiro521/qq-wechat-cli/issues" },
+  "keywords": ["qq", "wechat", "cli", "chat-history", "windows"],
+  "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" },
+  "type": "module",
+  "bin": { "qq-wechat-cli": "dist/cli.js" },
+  "engines": { "node": ">=24" },
+  "os": ["win32"],
+  "cpu": ["x64"],
+  "files": ["dist/*.js", "native/engine.exe", "README.md", "NOTICE", "LICENSE", "LICENSE-APACHE-2.0", "THIRD-PARTY-NOTICES", "docs/*.md", "research/QQ-CODEC.md"],
+  "scripts": {
+    "build:ts": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "build:rust": "cargo build --manifest-path native/Cargo.toml --release",
+    "build": "npm run build:ts && npm run build:rust && node scripts/package-engine.mjs && node scripts/third-party.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:rust": "cargo test --manifest-path native/Cargo.toml",
+    "check": "node node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "prepack": "node scripts/check-package.mjs"
+  },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.3" }
+}
