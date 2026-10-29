@@ -3,7 +3,7 @@ import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url));
-const result=spawnSync('cargo',['metadata','--manifest-path',join(root,'native/Cargo.toml'),'--offline','--format-version','1'],{encoding:'utf8',windowsHide:true,maxBuffer:8*1024*1024});
+const result=spawnSync('cargo',['metadata','--manifest-path',join(root,'native/Cargo.toml'),'--locked','--filter-platform','x86_64-pc-windows-msvc','--format-version','1'],{encoding:'utf8',windowsHide:true,maxBuffer:8*1024*1024});
 if(result.status!==0)throw new Error(result.stderr);
 let notice='Third-party source license notices included by the Windows Rust build.\n\n';
 for(const pkg of JSON.parse(result.stdout).packages.sort((a,b)=>a.name.localeCompare(b.name))){
