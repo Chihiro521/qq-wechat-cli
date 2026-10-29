@@ -6,14 +6,16 @@
 
 ## 安装与迁移
 
-当前先提供 GitHub Release 压缩包，npm registry 发布待完成。下载 [qq-wechat-cli-0.1.0.tgz](https://github.com/Chihiro521/qq-wechat-cli/releases/download/v0.1.0/qq-wechat-cli-0.1.0.tgz) 后安装：
+通过 npm 安装：
 
 ```powershell
-npm install -g .\qq-wechat-cli-0.1.0.tgz
+npm install -g qq-wechat-cli
 qq-wechat-cli --help
 ```
 
-源码与发行包：[GitHub](https://github.com/Chihiro521/qq-wechat-cli)、[Releases](https://github.com/Chihiro521/qq-wechat-cli/releases)。npm registry 发布后可使用 `npm install -g qq-wechat-cli`。
+也可下载 [GitHub Release 压缩包](https://github.com/Chihiro521/qq-wechat-cli/releases/download/v0.1.0/qq-wechat-cli-0.1.0.tgz)，执行 `npm install -g .\qq-wechat-cli-0.1.0.tgz` 安装。
+
+源码与发行包：[GitHub](https://github.com/Chihiro521/qq-wechat-cli)、[Releases](https://github.com/Chihiro521/qq-wechat-cli/releases)、[npm](https://www.npmjs.com/package/qq-wechat-cli)。
 
 旧工具与旧配置继续独立存在。显式导入旧配置后，新工具会建立自己的缓存和索引：
 
